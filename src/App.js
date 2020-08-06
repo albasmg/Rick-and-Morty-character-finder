@@ -14,10 +14,14 @@ const App = () => {
     });
   }, []);
 
+  const handleSearchChange = (searchValue) => {
+    console.log(searchValue);
+  };
+
   return (
     <>
       <Header />
-      <Filters />
+      <Filters onSearchChange={handleSearchChange} />
       <CharacterList characters={characters} />
     </>
   );
