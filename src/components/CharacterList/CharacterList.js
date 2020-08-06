@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import CharacterCard from '../CharacterCard/CharacterCard';
 
 const CharacterList = ({ characters }) => {
@@ -11,6 +12,10 @@ const CharacterList = ({ characters }) => {
       </ul>
     </section>
   );
+};
+
+CharacterList.propTypes = {
+  characters: PropTypes.array.isRequired,
 };
 
 export default CharacterList;

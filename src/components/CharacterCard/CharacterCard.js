@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const CharacterCard = ({ image, name, specie }) => {
   return (
@@ -12,6 +13,12 @@ const CharacterCard = ({ image, name, specie }) => {
       </li>
     </>
   );
+};
+
+CharacterCard.propTypes = {
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  specie: PropTypes.string.isRequired,
 };
 
 export default CharacterCard;
