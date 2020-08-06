@@ -1,10 +1,14 @@
 import React from 'react';
+import CharacterCard from '../CharacterCard/CharacterCard';
 
-const CharacterList = (props) => {
-  console.log(props);
+const CharacterList = ({ characters }) => {
   return (
     <section>
-      <ul></ul>
+      <ul>
+        {characters.map(({ id, image, name, species }) => (
+          <CharacterCard key={id} image={image} name={name} specie={species} />
+        ))}
+      </ul>
     </section>
   );
 };
