@@ -1,0 +1,13 @@
+.filter {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+
+  &__input {
+    height: 40px;
+    width: 400px;
+    padding: 10px;
+    font-size: 24px;
+    outline: none;
+  }
+}

@@ -9,7 +9,6 @@ const CharacterDetail = ({
   origin,
   totalEpisodes,
 }) => {
-  console.log('hola');
   return (
     <>
       <div>

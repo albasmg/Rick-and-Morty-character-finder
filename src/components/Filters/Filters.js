@@ -1,13 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './_filters.scss';
 
 const Filters = ({ onSearchChange }) => {
   const handleInputChange = (ev) => onSearchChange(ev.target.value);
 
   return (
     <div>
-      <form>
-        <input type="text" onChange={handleInputChange}></input>
+      <form className="filter">
+        <input
+          type="text"
+          onChange={handleInputChange}
+          className="filter__input"
+        ></input>
       </form>
     </div>
   );

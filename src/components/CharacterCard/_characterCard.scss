@@ -1,0 +1,21 @@
+.character {
+  margin: 20px;
+  background-color: lightblue;
+  padding-bottom: 8px;
+
+  &:hover {
+    box-shadow: 4px 8px 12px 0 rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transform: translatey(-4px);
+  }
+
+  &__name {
+    margin-left: 10px;
+    font-size: 22px;
+  }
+
+  &__specie {
+    margin-left: 10px;
+    font-size: 20px;
+  }
+}

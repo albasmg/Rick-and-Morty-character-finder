@@ -38,7 +38,7 @@ const App = () => {
         />
       );
     } else {
-      return <p>Producto no encontrado</p>;
+      return <p>Este personaje no se ha encontrado</p>;
     }
   };
 
