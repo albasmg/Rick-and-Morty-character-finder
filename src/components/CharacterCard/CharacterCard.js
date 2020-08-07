@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import PropTypes from 'prop-types';
 
-const CharacterCard = ({ image, name, specie }) => {
+const CharacterCard = ({ image, name, specie, id }) => {
   return (
-    <>
+    <Link to={`/character/${id}`}>
       <li>
         <div>
           <img src={image} alt={name}></img>
@@ -11,7 +13,7 @@ const CharacterCard = ({ image, name, specie }) => {
           <p>{specie}</p>
         </div>
       </li>
-    </>
+    </Link>
   );
 };
 

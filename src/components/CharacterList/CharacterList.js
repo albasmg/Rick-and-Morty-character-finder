@@ -7,7 +7,13 @@ const CharacterList = ({ characters }) => {
     <section>
       <ul>
         {characters.map(({ id, image, name, species }) => (
-          <CharacterCard key={id} image={image} name={name} specie={species} />
+          <CharacterCard
+            key={id}
+            id={id}
+            image={image}
+            name={name}
+            specie={species}
+          />
         ))}
       </ul>
     </section>
