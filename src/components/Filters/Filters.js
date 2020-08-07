@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const Filters = ({ onSearchChange }) => {
-  const [search, setSearch] = useState('');
-
-  const handleInputChange = (ev) => {
-    setSearch(ev.target.value);
-    onSearchChange(ev.target.value);
-  };
+  const handleInputChange = (ev) => onSearchChange(ev.target.value);
 
   return (
     <div>
       <form>
-        <input type="text" value={search} onChange={handleInputChange}></input>
+        <input type="text" onChange={handleInputChange}></input>
       </form>
     </div>
   );
+};
+
+Filters.propTypes = {
+  onSearchChange: PropTypes.func.isRequired,
 };
 
 export default Filters;

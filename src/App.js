@@ -7,22 +7,24 @@ import './App.css';
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
+  const [searcherValue, setSearcherValue] = useState('');
 
   useEffect(() => {
-    getDataFromApi().then((data) => {
-      setCharacters(data.results);
-    });
+    getDataFromApi().then(({ results }) => setCharacters(results));
   }, []);
 
-  const handleSearchChange = (searchValue) => {
-    console.log(searchValue);
-  };
+  const handleSearchChange = (searchValue) => setSearcherValue(searchValue);
+
+  const getFilteredCharacters = () =>
+    characters.filter(({ name }) =>
+      name.toLowerCase().includes(searcherValue.toLowerCase())
+    );
 
   return (
     <>
       <Header />
       <Filters onSearchChange={handleSearchChange} />
-      <CharacterList characters={characters} />
+      <CharacterList characters={getFilteredCharacters()} />
     </>
   );
 };
