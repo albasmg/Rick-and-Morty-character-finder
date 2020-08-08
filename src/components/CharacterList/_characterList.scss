@@ -43,3 +43,14 @@
     transform: translate(0, -0px);
   }
 }
+
+.urlNotFoundText {
+  font-size: 24px;
+  font-weight: bold;
+  color: $light-color;
+  text-align: center;
+
+  span {
+    color: $secondary-color;
+  }
+}

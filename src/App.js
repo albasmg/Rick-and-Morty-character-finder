@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Filters from './components/Filters/Filters';
 import CharacterList from './components/CharacterList/CharacterList';
@@ -10,6 +10,7 @@ import './App.css';
 const App = () => {
   const [characters, setCharacters] = useState([]);
   const [searcherValue, setSearcherValue] = useState('');
+  const [sortNameCheckbox, setSortNameCheckbox] = useState(false);
 
   useEffect(() => {
     getDataFromApi().then(({ results }) => setCharacters(results));
@@ -17,10 +18,28 @@ const App = () => {
 
   const handleSearchChange = (searchValue) => setSearcherValue(searchValue);
 
-  const getFilteredCharacters = () =>
-    characters.filter(({ name }) =>
+  const handleNameSortCheckbox = (sortNameCheckbox) =>
+    setSortNameCheckbox(sortNameCheckbox);
+
+  const getFilteredCharacters = () => {
+    const filteredCharacters = characters.filter(({ name }) =>
       name.toLowerCase().includes(searcherValue.toLowerCase())
     );
+
+    if (sortNameCheckbox) {
+      return filteredCharacters.sort((prevCharacter, nextCharacter) => {
+        const prevCharacterName = prevCharacter.name.toLowerCase();
+        const nextCharacterName = nextCharacter.name.toLowerCase();
+        return prevCharacterName < nextCharacterName
+          ? -1
+          : prevCharacterName > nextCharacterName
+          ? 1
+          : 0;
+      });
+    }
+
+    return filteredCharacters;
+  };
 
   const renderCharacterDetail = (props) => {
     const routeCharacterId = parseInt(props.match.params.characterId);
@@ -38,7 +57,15 @@ const App = () => {
         />
       );
     } else {
-      return <p>Este personaje no se ha encontrado</p>;
+      return (
+        <p className="urlNotFoundText">
+          Este personaje no se ha encontrado, puedes volver a{' '}
+          <Link to="/">
+            <span>el listado incial</span>
+          </Link>{' '}
+          para ver el resto.
+        </p>
+      );
     }
   };
 
@@ -49,7 +76,9 @@ const App = () => {
         <Route exact path="/">
           <Filters
             onSearchChange={handleSearchChange}
+            onCheckboxChange={handleNameSortCheckbox}
             searcherValue={searcherValue}
+            sortNameCheckbox={sortNameCheckbox}
           />
           <CharacterList
             characters={getFilteredCharacters()}
