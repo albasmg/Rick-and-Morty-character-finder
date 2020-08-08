@@ -1,0 +1,29 @@
+.detail {
+  margin: 0px auto;
+  padding: 20px;
+  width: 50%;
+  border-radius: 16px;
+  background-color: $primary-color;
+  display: flex;
+
+  &__data {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  &__button {
+    background-color: transparent;
+    border-radius: 16px;
+    border: none;
+    display: inline-block;
+    margin: 10px auto;
+    cursor: pointer;
+    color: $secondary-color;
+    font-size: 20px;
+    padding: 20px 76px;
+    text-decoration: none;
+    outline: none;
+  }
+}

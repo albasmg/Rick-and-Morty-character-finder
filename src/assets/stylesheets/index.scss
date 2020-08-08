@@ -1,0 +1,15 @@
+@import '_reset';
+@import '_variables';
+
+// COMPONENTS
+@import '../../components/Header/header';
+@import '../../components/Filters/filters';
+@import '../../components/CharacterList/characterList';
+@import '../../components/CharacterCard/characterCard';
+@import '../../components/CharacterDetail/characterDetail';
+
+body {
+  margin: 0;
+  background-color: $dark-color;
+  font-family: 'Work Sans', sans-serif;
+}

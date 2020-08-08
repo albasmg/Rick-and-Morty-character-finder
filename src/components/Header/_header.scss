@@ -1,9 +1,28 @@
 .header {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  align-items: center;
+  margin-top: 20px;
 
   &__img {
-    height: 100px;
+    height: 200px;
+  }
+
+  &__icon {
+    height: 120px;
+    margin: 20px;
+
+    &:hover {
+      animation: loop 2s linear infinite;
+    }
+  }
+}
+
+@keyframes loop {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

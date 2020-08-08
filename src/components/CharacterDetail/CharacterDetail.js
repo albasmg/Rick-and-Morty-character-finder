@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const CharacterDetail = ({
   image,
@@ -10,17 +11,23 @@ const CharacterDetail = ({
   totalEpisodes,
 }) => {
   return (
-    <>
-      <div>
-        <img src={image} alt={name}></img>
-        <h1>{name}</h1>
-        <p>Status: {status}</p>
-        <p>Specie: {specie}</p>
-        <p>Origin: {origin}</p>
-        <p>Episodes: {totalEpisodes}</p>
+    <section>
+      <Link to="/">
+        <button class="detail__button">Back to characters</button>
+      </Link>
+      <div className="detail">
+        <img src={image} alt={name} className="detail__image"></img>
+        <div className="detail__data">
+          <h1 className="detail__name">{name}</h1>
+          <p className="detail__status">
+            Status: {status === 'Alive' ? '👽' : '💀'}
+          </p>
+          <p className="detail__specie">Specie: {specie}</p>
+          <p className="detail__origin">Origin: {origin}</p>
+          <p className="detail__episodes">Episodes: {totalEpisodes}</p>
+        </div>
       </div>
-      <button>Back to characters</button>
-    </>
+    </section>
   );
 };
 
