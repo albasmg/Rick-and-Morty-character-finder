@@ -47,7 +47,10 @@ const App = () => {
       <Header />
       <Switch>
         <Route exact path="/">
-          <Filters onSearchChange={handleSearchChange} />
+          <Filters
+            onSearchChange={handleSearchChange}
+            searcherValue={searcherValue}
+          />
           <CharacterList
             characters={getFilteredCharacters()}
             searcherValue={searcherValue}
