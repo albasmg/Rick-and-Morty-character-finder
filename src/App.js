@@ -48,7 +48,10 @@ const App = () => {
       <Switch>
         <Route exact path="/">
           <Filters onSearchChange={handleSearchChange} />
-          <CharacterList characters={getFilteredCharacters()} />
+          <CharacterList
+            characters={getFilteredCharacters()}
+            searcherValue={searcherValue}
+          />
         </Route>
         <Route path="/character/:characterId" render={renderCharacterDetail} />
       </Switch>
