@@ -22,13 +22,20 @@ const Filters = ({
           onChange={handleInputChange}
           className="filter__input"
         />
-        <label className="filter__label">
+        <label className="filter__sortLabel">
           <input
             type="checkbox"
             checked={sortNameCheckbox}
-            className="filter__checkbox"
+            className="filter__sort"
             onChange={handleCheckboxChange}
           />
+          <span
+            className={
+              !sortNameCheckbox
+                ? 'filter__customSort'
+                : 'filter__customSortChecked'
+            }
+          ></span>
           Sort by name
         </label>
       </form>

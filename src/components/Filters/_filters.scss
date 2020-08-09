@@ -29,13 +29,37 @@
     }
   }
 
-  &__checkbox {
+  &__sort {
     height: 30px;
     width: 30px;
     margin-right: 10px;
+    opacity: 0;
   }
 
-  &__label {
+  &__customSort {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    width: 30px;
+    border: 2px solid $secondary-color;
+    border-radius: 14px;
+    background-color: $dark-color;
+  }
+
+  &__customSortChecked {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    width: 30px;
+    border: 2px solid $secondary-color;
+    border-radius: 14px;
+    background-color: $secondary-color;
+  }
+
+  &__sortLabel {
+    position: relative;
     display: flex;
     align-items: center;
     color: $secondary-color;
