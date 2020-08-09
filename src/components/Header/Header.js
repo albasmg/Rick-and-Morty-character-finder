@@ -2,7 +2,6 @@ import React from 'react';
 import headerLogo from '../../assets/images/rickandmorty-logo.png';
 import rick from '../../assets/images/rick.png';
 import morty from '../../assets/images/morty.png';
-import './_header.scss';
 
 const Header = () => {
   return (
