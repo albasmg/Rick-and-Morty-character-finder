@@ -6,7 +6,7 @@ import notFound from '../../assets/images/not-found.png';
 const CharacterList = ({ characters, searcherValue }) => {
   return (
     <section>
-      <ul className="characters">
+      <ul className="characters wrapper">
         {!characters.length ? (
           <div className="characters__notFound">
             <h1 className="characters__notFoundHeading">

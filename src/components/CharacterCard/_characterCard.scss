@@ -1,8 +1,12 @@
 .character {
-  margin: 20px;
   border-radius: 16px;
   background-color: $primary-color;
   padding-bottom: 8px;
+
+  @include mobile {
+    width: 60%;
+    margin: auto;
+  }
 
   &:hover {
     box-shadow: 4px 8px 12px 0 rgba(0, 0, 0, 0.3);
@@ -11,6 +15,7 @@
   }
 
   &__img {
+    width: 100%;
     border-radius: 15px;
   }
 
