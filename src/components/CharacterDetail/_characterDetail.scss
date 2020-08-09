@@ -1,29 +1,83 @@
 .detail {
   margin: 0px auto;
   padding: 20px;
-  width: 50%;
+  width: 600px;
   border-radius: 16px;
   background-color: $primary-color;
   display: flex;
 
-  &__data {
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+  }
+
+  &__characterInfo {
     margin-left: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
+
+    @include mobile {
+      margin-left: 0;
+    }
   }
 
   &__button {
+    display: flex;
+    align-items: center;
     background-color: transparent;
-    border-radius: 16px;
-    border: none;
-    display: inline-block;
-    margin: 10px auto;
+    border: 2px solid $secondary-color;
+    border-radius: 24px;
+    padding: 16px;
+    margin: 24px auto;
     cursor: pointer;
     color: $secondary-color;
     font-size: 20px;
-    padding: 20px 76px;
     text-decoration: none;
     outline: none;
+
+    @include mobile {
+      padding: 8px;
+      font-size: 16px;
+    }
+
+    &:hover {
+      animation-name: floating;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+    }
+  }
+
+  &__backIcon {
+    height: 80px;
+    margin-right: 8px;
+
+    @include mobile {
+      height: 60px;
+    }
+  }
+
+  &__image {
+    height: 200px;
+    width: 200px;
+  }
+  &__name {
+    margin: 0;
+    color: $light-color;
+
+    @include mobile {
+      margin-top: 20px;
+    }
+  }
+
+  &__info {
+    font-size: 18px;
+    font-weight: bold;
+
+    span {
+      font-weight: lighter;
+    }
   }
 }

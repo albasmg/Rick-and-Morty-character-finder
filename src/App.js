@@ -5,6 +5,7 @@ import Filters from './components/Filters/Filters';
 import CharacterList from './components/CharacterList/CharacterList';
 import CharacterDetail from './components/CharacterDetail/CharacterDetail';
 import getDataFromApi from './services/api';
+import portal from './assets/images/portal.png';
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
@@ -57,13 +58,15 @@ const App = () => {
       );
     } else {
       return (
-        <p className="urlNotFoundText">
-          Este personaje no se ha encontrado, puedes volver a{' '}
-          <Link to="/">
-            <span>el listado incial</span>
-          </Link>{' '}
-          para ver el resto.
-        </p>
+        <div className="urlNotFound">
+          <p className="urlNotFound__text">
+            This character has not been found, you can go back to{' '}
+            <Link to="/">
+              <span>all characters</span>!
+            </Link>
+          </p>
+          <img src={portal} alt="Hole" className="urlNotFound__img"></img>
+        </div>
       );
     }
   };

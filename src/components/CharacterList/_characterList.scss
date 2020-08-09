@@ -38,6 +38,10 @@
     animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
+
+    @include mobile {
+      height: 280px;
+    }
   }
 }
 
@@ -53,21 +57,37 @@
   }
 }
 
-.urlNotFoundText {
-  font-size: 24px;
-  font-weight: bold;
-  color: $light-color;
-  text-align: center;
+.urlNotFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  span {
-    color: $secondary-color;
+  &__text {
+    font-size: 24px;
+    font-weight: bold;
+    color: $light-color;
+    text-align: center;
+
+    span {
+      color: $secondary-color;
+    }
+  }
+
+  &__img {
+    margin-top: 40px;
+    height: 400px;
+    animation: loop 25s linear infinite;
+
+    @include mobile {
+      height: 300px;
+    }
   }
 }
 
 .wrapper {
   max-width: 90%;
   margin: auto;
-  padding: 20px;
+  padding: 0px, 20px;
 
   @include bigger-screens {
     max-width: $desktop;

@@ -10,7 +10,7 @@ const CharacterList = ({ characters, searcherValue }) => {
         {!characters.length ? (
           <div className="characters__notFound">
             <h1 className="characters__notFoundHeading">
-              No hay ningun personaje que coincida con la palabra
+              There is not any character that match the word
               <span className="characters__notFoundHeading--search">
                 {searcherValue}
               </span>

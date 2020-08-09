@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import goBack from '../../assets/images/back.png';
 
 const CharacterDetail = ({
   image,
@@ -12,21 +13,36 @@ const CharacterDetail = ({
 }) => {
   return (
     <section>
-      <Link to="/">
-        <button class="detail__button">Back to characters</button>
-      </Link>
       <div className="detail">
         <img src={image} alt={name} className="detail__image"></img>
-        <div className="detail__data">
+        <div className="detail__characterInfo">
           <h1 className="detail__name">{name}</h1>
-          <p className="detail__status">
-            Status: {status === 'Alive' ? '👽' : '💀'}
-          </p>
-          <p className="detail__specie">Specie: {specie}</p>
-          <p className="detail__origin">Origin: {origin}</p>
-          <p className="detail__episodes">Episodes: {totalEpisodes}</p>
+          <div>
+            <p className="detail__info">
+              Status: {status === 'Alive' ? '👽' : '💀'}
+            </p>
+            <p className="detail__info">
+              Specie: <span>{specie}</span>
+            </p>
+            <p className="detail__info">
+              Origin: <span>{origin}</span>
+            </p>
+            <p className="detail__info">
+              Episodes: <span>{totalEpisodes}</span>
+            </p>
+          </div>
         </div>
       </div>
+      <Link to="/">
+        <button class="detail__button">
+          <img
+            src={goBack}
+            alt="Go back to all characters"
+            className="detail__backIcon"
+          />
+          Back to all characters
+        </button>
+      </Link>
     </section>
   );
 };
