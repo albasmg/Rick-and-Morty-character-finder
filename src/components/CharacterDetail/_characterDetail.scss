@@ -27,13 +27,12 @@
     display: flex;
     align-items: center;
     background-color: transparent;
-    border: 2px solid $secondary-color;
-    border-radius: 24px;
     padding: 16px;
+    border: none;
     margin: 24px auto;
     cursor: pointer;
     color: $secondary-color;
-    font-size: 20px;
+    font-size: 18px;
     text-decoration: none;
     outline: none;
 
@@ -42,16 +41,15 @@
       font-size: 16px;
     }
 
-    &:hover {
-      animation-name: floating;
-      animation-duration: 3s;
-      animation-iteration-count: infinite;
-      animation-timing-function: ease-in-out;
+    &:hover > img {
+      transform: translate(-700px);
+      overflow: hidden;
+      transition: 2s ease-in;
     }
   }
 
   &__backIcon {
-    height: 80px;
+    height: 60px;
     margin-right: 8px;
 
     @include mobile {
