@@ -34,7 +34,7 @@ const CharacterDetail = ({
         </div>
       </div>
       <Link to="/">
-        <button class="detail__button">
+        <button className="detail__button">
           <img
             src={goBack}
             alt="Go back to all characters"

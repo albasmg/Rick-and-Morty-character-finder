@@ -4,6 +4,7 @@ import Header from './components/Header/Header';
 import Filters from './components/Filters/Filters';
 import CharacterList from './components/CharacterList/CharacterList';
 import CharacterDetail from './components/CharacterDetail/CharacterDetail';
+import Loader from './components/Loader/Loader';
 import getDataFromApi from './services/api';
 import portal from './assets/images/portal.png';
 
@@ -11,9 +12,14 @@ const App = () => {
   const [characters, setCharacters] = useState([]);
   const [searcherValue, setSearcherValue] = useState('');
   const [sortNameCheckbox, setSortNameCheckbox] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    getDataFromApi().then(({ results }) => setCharacters(results));
+    setIsLoading(true);
+    getDataFromApi().then(({ results }) => {
+      setCharacters(results);
+      setIsLoading(false);
+    });
   }, []);
 
   const handleSearchChange = (searchValue) => setSearcherValue(searchValue);
@@ -70,6 +76,8 @@ const App = () => {
       );
     }
   };
+
+  if (isLoading) return <Loader />;
 
   return (
     <>

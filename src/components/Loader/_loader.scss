@@ -1,0 +1,23 @@
+.loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  &__text {
+    display: flex;
+
+    color: $light-color;
+    font-size: 25px;
+  }
+
+  &__img {
+    height: 100px;
+    animation: loop 3s linear infinite;
+  }
+}

@@ -2,6 +2,7 @@
 @import '_variables';
 @import '_mixins';
 @import '../../app';
+@import './animations';
 
 // COMPONENTS
 @import '../../components/Header/header';
@@ -9,6 +10,7 @@
 @import '../../components/CharacterList/characterList';
 @import '../../components/CharacterCard/characterCard';
 @import '../../components/CharacterDetail/characterDetail';
+@import '../../components/Loader/loader';
 
 body {
   margin: 0;
