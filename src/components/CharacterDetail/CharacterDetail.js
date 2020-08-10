@@ -11,6 +11,9 @@ const CharacterDetail = ({
   origin,
   totalEpisodes,
 }) => {
+  const getStatus = () =>
+    status === 'Alive' ? '🚀👽' : status === 'Dead' ? '💀' : 'Unknown 🤷🏻‍♀️';
+
   return (
     <section>
       <div className="detail">
@@ -19,7 +22,7 @@ const CharacterDetail = ({
           <h1 className="detail__name">{name}</h1>
           <div>
             <p className="detail__info">
-              Status: {status === 'Alive' ? '👽' : '💀'}
+              Status: <span>{getStatus()}</span>
             </p>
             <p className="detail__info">
               Specie: <span>{specie}</span>

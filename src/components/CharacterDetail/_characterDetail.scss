@@ -1,5 +1,5 @@
 .detail {
-  margin: 0px auto;
+  margin: 40px auto;
   padding: 20px;
   width: 600px;
   border-radius: 16px;
@@ -42,7 +42,7 @@
     }
 
     &:hover > img {
-      transform: translate(-700px);
+      transform: translate(-1200px);
       overflow: hidden;
       transition: 2s ease-in;
     }
@@ -58,15 +58,22 @@
   }
 
   &__image {
-    height: 200px;
-    width: 200px;
+    height: 250px;
+    width: 250px;
+
+    @include mobile {
+      height: 200px;
+      width: 200px;
+    }
   }
+
   &__name {
     margin: 0;
     color: $light-color;
 
     @include mobile {
       margin-top: 20px;
+      font-size: 24px;
     }
   }
 
@@ -76,6 +83,10 @@
 
     span {
       font-weight: lighter;
+    }
+
+    @include mobile {
+      font-size: 16px;
     }
   }
 }
