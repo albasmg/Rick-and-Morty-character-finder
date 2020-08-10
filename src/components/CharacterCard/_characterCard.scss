@@ -9,7 +9,6 @@
   }
 
   &:hover {
-    box-shadow: 4px 8px 12px 0 rgba(0, 0, 0, 0.3);
     cursor: pointer;
     transform: translatey(-4px);
   }
@@ -20,12 +19,14 @@
   }
 
   &__name {
-    margin-left: 10px;
-    font-size: 22px;
+    margin-left: 16px;
+    font-size: 20px;
+    font-weight: bold;
+    color: $light-color;
   }
 
   &__specie {
-    margin-left: 10px;
-    font-size: 20px;
+    margin-left: 16px;
+    font-size: 18px;
   }
 }
